@@ -72,6 +72,13 @@ jobs:
           ref: ${{ inputs.source-branch }}
           token: ${{ secrets.gh-token }}
 
+      - name: what's going on?
+        run: |-
+          set -x
+          pwd
+          ls -alh
+          env
+
       - name: Semver CLI
         uses: ./.github/actions/semver
         with:
